@@ -124,6 +124,7 @@ button.addEventListener("pointerdown", () => {
 button.addEventListener("mousedown", () => {
   counter += ppc;
   bark.play();
+  // make create two distinct barks to audibly represent George's age (when the doggie upgrades)
   counterElement.textContent = counter.toFixed(1);
 });
 
@@ -140,6 +141,7 @@ for (let i = 0; i < buyables.length; i++) {
       counter -= buyables[i].price;
       buyables[i].price += buyables[i].price / 10;
       buyables[i].numbought += 1;
+      //Add a SFX of the buyable being bought
       newButton.innerText = buyables[i].buttontext + "(" +
         buyables[i].price.toFixed(1).toString() + ")";
 
