@@ -24,8 +24,14 @@ deno task preview
 - deno task fmt formats the project.
 - deno task ci checks formatting, lint, and TypeScript.
 - deno task preview serves the most recent production build locally.
-  
+
 Preview does not rebuild or publish the game. Use the printed preview address. GitHub Actions runs checks and deploys the production build to GitHub Pages when changes are pushed to main.
+
+## Code Organization
+|File|Function|
+|---|---|
+|[src/assets](https://github.com/rbutts06/Demo1/tree/main/src/assets)|Holds all assets images and sounds|
+|[src/main.ts](https://github.com/rbutts06/Demo1/blob/main/src/main.ts)|Assembles the game. Creates the buttons and counters and keeps track of all game progress|
 
 ## Credits
 
