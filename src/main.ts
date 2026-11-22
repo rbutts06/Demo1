@@ -113,6 +113,13 @@ function soundPlay(url: string): void {
 function update() {
   counterElement.textContent = counter.toFixed(1);
   petspersecond.textContent = "Pets Per Second: " + pps.toFixed(1).toString();
+  for (let i = 0; i < buttons.length; i++) {
+    if (counter < buyables[i].price) {
+      buttons[i].style.backgroundColor = `rgb(163,163,163)`;
+    } else {
+      buttons[i].style.backgroundColor = `hsl(133, 59%, 62%)`;
+    }
+  }
 }
 
 button.addEventListener("pointerup", () => {
@@ -163,12 +170,5 @@ for (let i = 0; i < buyables.length; i++) {
 setInterval(function () {
   counter += pps;
   counterElement.textContent = counter.toFixed(1);
-
-  for (let i = 0; i < buttons.length; i++) {
-    if (counter < buyables[i].price) {
-      buttons[i].style.backgroundColor = `rgb(163,163,163)`;
-    } else {
-      buttons[i].style.backgroundColor = `hsl(133, 59%, 62%)`;
-    }
-  }
+  update();
 }, 1000);
